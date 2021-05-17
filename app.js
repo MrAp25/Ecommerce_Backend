@@ -6,12 +6,13 @@ const cors = require('cors');
 const app = express();
 
 //Import Routes
-
+const authRoute = require('./routes/auth');
 const orderRoute = require('./routes/order');
 const productsRoute = require('./routes/products');
 const usersRoute = require('./routes/users');
 
 //Use Routes
+app.use('/api/auth', authRoute);
 app.use('/api/order',orderRoute);
 app.use('/api/products',productsRoute);
 app.use('/api/users',usersRoute);
